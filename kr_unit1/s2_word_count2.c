@@ -1,6 +1,6 @@
 /**
  *
- * File: demo1_3_2.c
+ * File: s2_word_counting2.c
  * Author: Jacky Yang
  * Date: 2011-12-21
  * Desc: 
@@ -17,9 +17,9 @@ int main()
     int state,nc;
     state = OUT;
     nc = 0;
-    while(c=getchar()!='*') {
+    while((c=getchar())!='*') {
         printf("%08x \n",c);
-        if(c=='\n'||c==' '||c=='\t'||c==EOF) {
+        if(c=='\n'||c==' '||c=='\t') {
             state = OUT;
         } else if(state==OUT) {
             state = IN;
