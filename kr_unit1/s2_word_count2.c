@@ -17,6 +17,10 @@ int main()
     int state,nc;
     state = OUT;
     nc = 0;
+
+/*error line   
+ *  while(c=getchar()!='*') {
+ */
     while((c=getchar())!='*') {
         printf("%08x \n",c);
         if(c=='\n'||c==' '||c=='\t') {
