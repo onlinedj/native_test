@@ -7,5 +7,5 @@ int main(int argc, char** argv)
         short b;
     } demo;
 
-    printf("the size is %d\n",sizeof(demo));
+    printf("the size is %ld\n",sizeof(demo));
 }
