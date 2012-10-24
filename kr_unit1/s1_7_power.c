@@ -9,6 +9,13 @@
 #      History:
 =============================================================================*/
 #include <stdio.h>
+#include <stdlib.h>
+
+static void usage(const char *argv0)
+{
+    fprintf(stderr, "Usage: %s base n\n" , argv0);
+    exit(-1);
+}
 
 static signed int power(signed int base, signed int n) {
     if(n==0) {
@@ -16,7 +23,7 @@ static signed int power(signed int base, signed int n) {
     } else if(n<0) {
         return -1;
     } else {
-        while(n>0) {
+        while(n-1>0) {
             base *= base;
             n--;
         } 
@@ -28,5 +35,13 @@ static signed int power(signed int base, signed int n) {
 int main(int argc, const char *argv[])
 {
     
+    if(argc < 3) {
+        usage(argv[0]); 
+    }
+    int base = atoi(argv[1]);
+    int n = atoi(argv[2]);
+    printf("base=%d,n=%d\n",base,n);
+    printf("result=%d\n",power(base,n));
+
     return 0;
 }
