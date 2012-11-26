@@ -8,4 +8,5 @@ int main(int argc, char** argv)
     printf("the long size is %ld\n",sizeof(long));
     printf("the float size is %ld\n",sizeof(float));
     printf("the double size is %ld\n",sizeof(double));
+    printf("the pointer type size is %ld\n",sizeof(int*));
 }

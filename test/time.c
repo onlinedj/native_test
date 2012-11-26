@@ -18,12 +18,17 @@ int test2();
 
 int main(int argc, const char *argv[])
 {
+    test2();
 }
 
 int test2()
 {
-    
-
+    time_t total = time(NULL);    
+    printf("total=%ld",(unsigned long)total);
+    printf("localtime=%s",ctime(&total));
+    struct tm *tmp;
+    tmp = gmtime(&total);
+    printf("asctime=%s",asctime(tmp));
 }
 
 int test1()
@@ -35,10 +40,10 @@ int test1()
     char *str_out;
     str_out = calloc(sizeof(char), 15);
     fprintf(stdout,"the time by second: %ld\n", val1.tv_sec);
-    struct tm* tm;
-    tm = localtime(&val1.tv_sec);
-    fprintf(stdout,"the standard output: %d %d %d\n", tm->tm_year, tm->tm_mon, tm->tm_mday);
-    strftime(str_out, 50, "%Y%m%d%H%M%S", tm);
+    struct tm *tmp;
+    tmp = localtime(&val1.tv_sec);
+    fprintf(stdout,"the standard output: %d %d %d\n", tmp->tm_year, tmp->tm_mon, tmp->tm_mday);
+    strftime(str_out, 50, "%Y%m%d%H%M%S", tmp);
     fprintf(stdout,"the local time: %s\n", str_out);
     return 0;
 }
