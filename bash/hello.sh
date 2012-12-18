@@ -1,3 +1,5 @@
 #!/bin/sh
 
-echo "process $UID started"
+echo "process started"
+printf "%s, you are the shit!,%s\n" emily "don't you?"
+

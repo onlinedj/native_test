@@ -28,12 +28,14 @@ int main(int argc, const char *argv[])
     d = a + b;
     PRINT(c);
     PRINT(d);*/
-    signed short a;
-    unsigned short b;
-    unsigned short c;
-    a = SHRT_MIN;
-    b = 5;
-    c = a + b;
-    PRINT(c);
+    signed int a;
+    unsigned int b;
+    unsigned int c;
+    a = -15;
+    b = UINT_MAX;
+    c = b - a;
+    printf("a=%d\n",a);
+    printf("b=%u\n",b);
+    printf("c=%u\n",c);
     exit(14);
 }
