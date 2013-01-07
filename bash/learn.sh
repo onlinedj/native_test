@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ###################
 # hi, first look at the line up, we are running shell by sh(which is dash released by openBSD)
@@ -169,3 +169,63 @@ set -x #means enable debug
 set +x #means disable debug
 #or use sha-bang to assign the argument
 ##!/bin/bash -xv
+
+#show args
+echo "args:" $@
+
+#functions
+function test()
+{
+    cmd_result=$(ls|cat -n)
+    echo $cmd_result
+}
+
+#spawn another process
+pwd
+(cd /etc;pwd)
+pwd
+
+#use internal cmd read to interact
+read -s -p "Enter passwd:" _passwd
+echo $_passwd
+
+#use $IFS to seperate string
+#and also first use the for loop
+echo $IFS
+old_ifs=$IFS
+IFS=":"
+data="name:sex:location:id:age"
+for item in $data
+do
+    echo $item
+    sleep 1 #use sleep to wait 1 second
+done
+#let IFS=old_ifs #this will cause 0 eaten by bash
+                ##let only used for arithmatic operation
+#echo "IFS=old_ifs  "$?
+IFS=0
+######################################
+ti=0
+echo "ti="$ti
+
+for((i=0;i<5;i++))
+{
+    echo $i
+}
+for alph in {a..f}
+do
+    echo $alph
+done
+for num in {0..12}
+do
+    echo $num
+done
+#use while loop
+timeout=0
+#while [ $timeout -lt 7 ]
+#do
+    #echo $timeout
+    #let timeout++
+#done
+
+######################################
