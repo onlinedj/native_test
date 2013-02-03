@@ -151,3 +151,14 @@ function nchangesuffix()
         mv $tmp $(basename $tmp .$current).$expected
     done
 }
+
+function ncd()
+{
+    step=$1
+    echo step=$step
+    while [ $step -gt 0 ]
+    do
+        cd ..
+        let step--
+    done
+}

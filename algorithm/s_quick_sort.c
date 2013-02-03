@@ -19,7 +19,8 @@ int main(int argc, const char *argv[])
 void quick_sort(int* array,int left,int right)
 {
     if(right>left) {
-        int index = partition(array,left,right);
+        pivotIndex = (right - left)/2
+        int index = partition(array,left,right,pivotIndex);
         quick_sort(array,left,index-1);
         quick_sort(array,index+1,right);
     }
@@ -31,9 +32,9 @@ int partition(int* array,int left,int right)
     int pivot_value = array[pivot];
     int j,index=left;
     swap(array,pivot,right);
-    for(j = left;j < right;j++) {
+    for(j = left+1;j < right;j++) {
         if(array[j]<pivot_value) {
-            swap(array,index++,array[j]);
+            swap(array,index++,j);
         }
     }
     swap(array,index,right);

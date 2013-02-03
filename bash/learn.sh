@@ -198,7 +198,7 @@ data="name:sex:location:id:age"
 for item in $data
 do
     echo $item
-    sleep 1 #use sleep to wait 1 second
+    #sleep 1 #use sleep to wait 1 second
 done
 #let IFS=old_ifs #this will cause 0 eaten by bash
                 ##let only used for arithmatic operation
@@ -227,5 +227,4 @@ timeout=0
     #echo $timeout
     #let timeout++
 #done
-
 ######################################
