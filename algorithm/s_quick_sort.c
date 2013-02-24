@@ -19,7 +19,7 @@ int main(int argc, const char *argv[])
 void quick_sort(int* array,int left,int right)
 {
     if(right>left) {
-        pivotIndex = (right - left)/2
+        pivotIndex = (right - left)/2;
         int index = partition(array,left,right,pivotIndex);
         quick_sort(array,left,index-1);
         quick_sort(array,index+1,right);
